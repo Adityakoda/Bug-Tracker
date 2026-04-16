@@ -8,7 +8,7 @@ import "../styles/projectDetails.css";
 export default function ProjectDetails() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { user, setUser } = useAuth();
+  const { user } = useAuth();
 
   const projectId = location.pathname.split("/").pop();
   const { projectName, projectDesc } = location.state || {};
@@ -34,10 +34,10 @@ const [showWorkflowMenu, setShowWorkflowMenu] = useState(false);
   };
 
   fetchRole();
-}, [projectId]);
+}, [projectId, user.id]);
 
   const [filteredIssues, setFilteredIssues] = useState([]);
-  const [filters/*setFilters*/] = useState({
+  const [filters] = useState({
   title: "",
   assigned_to: "",
   severity: "",
@@ -154,7 +154,7 @@ useEffect(() => {
       console.error("Fetching comments failed", err);
     }
   };
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   fetchComments();
 }, [activeIssue?.id]);
 

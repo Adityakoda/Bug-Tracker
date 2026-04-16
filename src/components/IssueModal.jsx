@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import "../styles/issueModal.css";
 
 export default function IssueModal({ onClose, onSave }) {
-const navigate = useNavigate();
+// const navigate = useNavigate();
   const { user } = useAuth();
   const location = useLocation();
 

@@ -22,7 +22,7 @@ const [activeTab, setActiveTab] = useState("profile");
   });
 
   const [shareEmail, setShareEmail] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
 useEffect(() => {
   if (!projectId) return;
 
