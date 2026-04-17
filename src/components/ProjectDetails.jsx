@@ -154,8 +154,8 @@ useEffect(() => {
       console.error("Fetching comments failed", err);
     }
   };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   fetchComments();
+// eslint-disable-next-line react-hooks/exhaustive-deps
 }, [activeIssue?.id]);
 
 
